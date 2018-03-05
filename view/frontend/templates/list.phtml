@@ -1,12 +1,5 @@
 <?php
-/**
- * Copyright © 2016 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
 use Magento\Framework\App\Action\Action;
-
-// @codingStandardsIgnoreFile
-
 ?>
 <?php
 /**
@@ -15,11 +8,12 @@ use Magento\Framework\App\Action\Action;
  * @var $block \Magento\Catalog\Block\Product\ListProduct
  */
 ?>
-<?php $helper = $this->helper('Magegeeks\Hidepriceandcartbutton\Helper\Data');
-      $status = $helper->getConfig('hidepriceandcartbutton/configuration/enable');
-      $priceText = $helper->getConfig('hidepriceandcartbutton/configuration/pricetext');
-      $addToCartText = $helper->getConfig('hidepriceandcartbutton/configuration/addtocarttext');
-      $isLoggedIn = $this->helper('Magegeeks\Hidepriceandcartbutton\Helper\Data')->isLoggedIn();
+<?php
+    $helper = $this->helper('Magegeeks\Hidepriceandcartbutton\Helper\Data');
+    $status = $helper->getConfig('hidepriceandcartbutton/configuration/enable');
+    $priceText = $helper->getConfig('hidepriceandcartbutton/configuration/pricetext');
+    $addToCartText = $helper->getConfig('hidepriceandcartbutton/configuration/addtocarttext');
+    $isLoggedIn = $this->helper('Magegeeks\Hidepriceandcartbutton\Helper\Data')->isLoggedIn();
 ?>
 <?php
 $_productCollection = $block->getLoadedProductCollection();

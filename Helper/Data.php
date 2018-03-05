@@ -3,7 +3,7 @@ namespace Magegeeks\Hidepriceandcartbutton\Helper;
 
 class Data extends \Magento\Framework\App\Helper\AbstractHelper
 {
-	/*
+    /*
     * @return string
     */
     public function getConfig($config_path)
@@ -17,10 +17,10 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     /*
     * @return bool
     */
-   	public function isLoggedIn()
+    public function isLoggedIn()
     {
         $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-		$context = $objectManager->get('Magento\Framework\App\Http\Context');
-		return $context->getValue(\Magento\Customer\Model\Context::CONTEXT_AUTH);
+        $context = $objectManager->get('Magento\Framework\App\Http\Context');
+        return $context->getValue(\Magento\Customer\Model\Context::CONTEXT_AUTH);
     }
 }

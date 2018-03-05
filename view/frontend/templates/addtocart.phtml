@@ -1,18 +1,14 @@
 <?php
-/**
- * Copyright © 2016 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
-
-// @codingStandardsIgnoreFile
+/** @codingStandardsIgnoreFile */
 
 /** @var $block \Magento\Catalog\Block\Product\View */
 ?>
-<?php $helper = $this->helper('Magegeeks\Hidepriceandcartbutton\Helper\Data');
-	  $status = $helper->getConfig('hidepriceandcartbutton/configuration/enable');
-	  $priceText = $helper->getConfig('hidepriceandcartbutton/configuration/pricetext');
-	  $addToCartText = $helper->getConfig('hidepriceandcartbutton/configuration/addtocarttext');
-	  $isLoggedIn = $this->helper('Magegeeks\Hidepriceandcartbutton\Helper\Data')->isLoggedIn();
+<?php
+    $helper = $this->helper('Magegeeks\Hidepriceandcartbutton\Helper\Data');
+    $status = $helper->getConfig('hidepriceandcartbutton/configuration/enable');
+    $priceText = $helper->getConfig('hidepriceandcartbutton/configuration/pricetext');
+    $addToCartText = $helper->getConfig('hidepriceandcartbutton/configuration/addtocarttext');
+    $isLoggedIn = $this->helper('Magegeeks\Hidepriceandcartbutton\Helper\Data')->isLoggedIn();
 ?>
 <?php $_product = $block->getProduct(); ?>
 <?php $buttonTitle = __('Add to Cart'); ?>
@@ -35,14 +31,14 @@
         </div>
         <?php endif; ?>
         <div class="actions">
-        <?php if($status && !$isLoggedIn):?>
-        	<button title="<?php /* @escapeNotVerified */ echo $addToCartText ?>"
+        <?php if ($status && !$isLoggedIn): ?>
+            <button title="<?php /* @escapeNotVerified */ echo $addToCartText ?>"
                     class="action primary tocart"
                     id="product-addtocart-button"
                     disabled>
                 <span><?php /* @escapeNotVerified */ echo $addToCartText ?></span>
             </button>
-        <?php else:?>
+        <?php else: ?>
             <button type="submit"
                     title="<?php /* @escapeNotVerified */ echo $buttonTitle ?>"
                     class="action primary tocart"

@@ -23,9 +23,9 @@ class Render extends Template
     /**
      * @var \Magento\Framework\Registry
      */
-    protected $registry;
+    public $registry;
 
-    protected $helper;
+    public $helper;
     /**
      * Construct
      *
@@ -49,7 +49,7 @@ class Render extends Template
      *
      * @return string
      */
-    protected function _toHtml()
+    public function _toHtml()
     {
         /** @var PricingRender $priceRender */
         $priceRender = $this->getLayout()->getBlock($this->getPriceRender());
@@ -62,7 +62,7 @@ class Render extends Template
                 $status = $this->helper->getConfig('hidepriceandcartbutton/configuration/enable');
                 $priceText = $this->helper->getConfig('hidepriceandcartbutton/configuration/pricetext');
                 $isLoggedIn = $this->helper->isLoggedIn();
-                if($status && !$isLoggedIn) {
+                if ($status && !$isLoggedIn) {
                     return $priceText;
                 } else {
                     return $priceRender->render($this->getPriceTypeCode(), $product, $arguments);
@@ -77,7 +77,7 @@ class Render extends Template
      *
      * @return Product
      */
-    protected function getProduct()
+    public function getProduct()
     {
         $parentBlock = $this->getParentBlock();
 
